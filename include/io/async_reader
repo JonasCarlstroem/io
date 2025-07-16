@@ -1,0 +1,3 @@
+#pragma
+
+#include "../../io_async_reader.hpp"
