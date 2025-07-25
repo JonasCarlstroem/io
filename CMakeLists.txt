@@ -5,16 +5,13 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE Debug)
 
-add_library(io INTERFACE)
+#add_library(io INTERFACE)
+CREATE_LIB(io INTERFACE)
+
 target_compile_features(io INTERFACE cxx_std_17)
 
-install(TARGETS io
-		EXPORT libTargets
-		LIBRARY DESTINATION lib
-		ARCHIVE DESTINATION lib
-		RUNTIME DESTINATION bin
-		INCLUDES DESTINATION include)
-
-install(DIRECTORY include/ DESTINATION include)
-
-set(LIB_TARGETS io PARENT_SCOPE)
+target_include_directories(io INTERFACE
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+	$<INSTALL_INTERFACE:include/io>
+)
+INSTALL_LIB(io True io)

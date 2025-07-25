@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <streambuf>
 #include <vector>
-#include <winapi/handle>
+#include <winapi/handle.h>
 
 namespace io {
 

@@ -1,4 +1,0 @@
-#pragma once
-
-#include "writer"
-#include "async_writer"
